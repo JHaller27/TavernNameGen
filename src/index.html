@@ -14,7 +14,7 @@
 
 <script>
 	// Tables
-	var adjective = [
+	var adjective = [ 'offbyzero',
 	'Red', 'Orange', 'Yellow', 'Green', 'Blue',
 	'Purple', 'Rainbow', 'Electric', 'Ochre', 'Puce',
 	'Navy', 'Maroon', 'Pink', 'Peach', 'Cyan',
@@ -37,7 +37,7 @@
 	'Wooden', 'Bloody', 'Yawning', 'Sleepy', 'Hungry'
 	];
 
-	var noun = [
+	var noun = [ 'offbyzero',
 	'Dog', 'Wolf', 'Fox', 'Pug', 'Cat',
 	'Lion', 'Tiger', 'Kitten', 'Ox', 'Cow',
 	'Sow', 'Bull', 'Calf', 'Horse', 'Stallion',
@@ -60,7 +60,7 @@
 	'Helm', 'Flask', 'Flagon', 'Pint', 'Shot'
 	];
 
-	var title = [
+	var title = [ 'offbyzero',
 	'Bar', 'Beer Hall', 'Ale House', 'Pub',
 	'Lounge', 'Brewery', 'Loft', 'Club',
 	'Inn', 'Tavern', 'Den', 'Lodge'
@@ -69,9 +69,75 @@
 	function generate ()
 	{
 		// Initialize output
-		var output = "Error";
+		var output = "";
+
+		switch (roll(1,10))
+		{
+			case 1:
+				output += adjective[roll(1,100)] + " ";
+				output += noun[roll(1,100)];
+				break;
+			case 2:
+				output += adjective[roll(1,100)] + " ";
+				output += noun[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+			case 3:
+				output += "The ";
+				output += adjective[roll(1,100)] + " ";
+				output += noun[roll(1,100)] + " ";
+				break;
+			case 4:
+				output += "The ";
+				output += adjective[roll(1,100)] + " ";
+				output += noun[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+			case 5:
+				output += noun[roll(1,100)] + " ";
+				output += "& ";
+				output += noun[roll(1,100)];
+				break;
+			case 6:
+				output += noun[roll(1,100)] + " ";
+				output += "& ";
+				output += noun[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+			case 7:
+				output += "The ";
+				output += noun[roll(1,100)] + " ";
+				output += "& ";
+				output += noun[roll(1,100)];
+				break;
+			case 8:
+				output += "The ";
+				output += noun[roll(1,100)] + " ";
+				output += "& ";
+				output += noun[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+			case 9:
+				output += adjective[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+			case 10:
+				output += "The ";
+				output += adjective[roll(1,100)] + " ";
+				output += title[roll(1,12)];
+				break;
+		}
 
 		document.getElementById("output").innerHTML = output;
+	}
+
+	function roll (num, sides)
+	{
+		var sum = 0;
+		var i;
+		for (i = 0; i < num; i++)
+			sum += Math.floor((Math.random() * sides)) + 1;
+		return sum;
 	}
 </script>
 
