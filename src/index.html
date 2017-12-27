@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tavern Name Generator</title>
+	
+	<script>
+		function generate ()
+		{
+			// Initialize output
+			var output = "Error";
+			
+			document.getElementById("output").innerHTML = output;
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Tavern Name Generator</h1>
+	
+	<input type="button" id="generate" value="Generate" onclick="generate()" />
+	<hr />
+	<b>Tavern Name</b>: <span id="output"></span>
+</body>
+
+</html>
