@@ -3,5 +3,4 @@
 Based on the following table:
 ![Tavern Name Tables][tables]
 
-[tables]
-
+[tables]: ./Tables.jpg
